@@ -46,7 +46,7 @@ margin-left:25px; margin-top: 35px; width: 250px;height:120px;color:#aeaeae;font
 
 background: linear-gradient(90deg, rgba(210, 57, 210, 1) 0%, rgba(90, 12, 90, 1) 40%, #5a0c5a 95%); width:270px; margin-left:15px; margin-top:5px; text-align:center; border: 3px solid; border-color: #000000;}</style>
 `;
-
+dragg.style.zIndex = '9999';
 document.body.appendChild(dragg);
 function attach() {
 eval(`var x = document.createElement("script")
