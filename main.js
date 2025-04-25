@@ -1,4 +1,3 @@
-//im not obfuscating this cuz why gatekeep
 var isDragging = false;
 var offsetX = 0;
 var offsetY = 0;
@@ -9,12 +8,13 @@ dragg.style.width = "300px";
 dragg.style.height = "200px";
 dragg.style.borderRadius = "12px"
 dragg.style.position = "absolute"; 
+dragg.style.zIndex = "9999";
 dragg.innerHTML = `
     <div id="title"><b>Lunar executor</b></div>
     <div>
         <textarea id="hello"></textarea>
     </div>
-    <button onclick='run()' class="btn"><b>Run</b></button><button class="btn2" onclick="closes()"><b>Close</b></button><button class="btn2" onclick="(function () { var script = document.createElement('script'); script.src='//chii.liriliri.io/playground/target.js'; document.body.appendChild(script); script.setAttribute('embedded', 'true')})();"><b>Chii</b></button><a id="statu"></a>
+    <button onclick='runcode47()' class="btn"><b>Run</b></button><button class="btn2" onclick="closes()"><b>Close</b></button><button class="btn2" onclick="(function () { var script = document.createElement('script'); script.src='//chii.liriliri.io/playground/target.js'; document.body.appendChild(script); script.setAttribute('embedded', 'true')})();"><b>Chii</b></button><a id="statu"></a>
     <style>@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
 #dragg {
 background: #D239D2;
@@ -46,7 +46,7 @@ margin-left:25px; margin-top: 35px; width: 250px;height:120px;color:#aeaeae;font
 
 background: linear-gradient(90deg, rgba(210, 57, 210, 1) 0%, rgba(90, 12, 90, 1) 40%, #5a0c5a 95%); width:270px; margin-left:15px; margin-top:5px; text-align:center; border: 3px solid; border-color: #000000;}</style>
 `;
-dragg.style.zIndex = '9999';
+
 document.body.appendChild(dragg);
 function attach() {
 eval(`var x = document.createElement("script")
@@ -74,7 +74,7 @@ function onMouseMove(event) {
         dragg.style.top = (event.clientY - offsetY) + "px";
     }
 }
-function run() {
+function runcode47() {
     if (document.getElementById("hello").value == "spongbob") {
         var x = document.body.style.backgroundImage
         document.body.style.backgroundImage = "URL(https://preview.redd.it/does-anyone-know-the-origin-of-this-spongebob-bob-picture-v0-z70gzlbf0n8e1.png?width=903&format=png&auto=webp&s=0a851304979be70f49509c2e24f27b224ce10317)"
@@ -85,7 +85,7 @@ function run() {
 }
 dragg.addEventListener("mousedown", function (event) {
     isDragging = true;
-    
+    // Calculate offset where user clicked inside the div
     offsetX = event.clientX - dragg.getBoundingClientRect().left;
     offsetY = event.clientY - dragg.getBoundingClientRect().top;
 });
